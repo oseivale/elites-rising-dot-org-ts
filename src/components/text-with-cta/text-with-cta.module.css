@@ -5,7 +5,7 @@
 .textWithCTAWrapper h1 {
     text-align: inherit !important;
     text-transform: uppercase;
-    font-size: 2.2rem;
+    font-size: 1.9rem !important;
     line-height: 40px;
     /* font-weight: bold; */
     color: var(--brand-blue);
@@ -96,4 +96,107 @@ margin-top: 1.5rem;
     position: relative;
     height: 5px;
     background-color: rgb(255, 230, 0);
+}
+
+@media screen and (min-width: 1070px) {
+    .textWithCTAContainer {
+        text-align: center;
+        width: auto;
+    }
+    .textWithCTAWrapper h1 {
+        text-align: inherit !important;
+        text-transform: uppercase;
+        font-size: 2.2rem;
+        line-height: 40px;
+        /* font-weight: bold; */
+        color: var(--brand-blue);
+    }
+    
+    .textWithCTAWrapper h2 {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin-top: .25rem;
+    }
+    
+    .textWithCTAWrapper p {
+        margin-top: 1rem;
+        line-height: 30px;
+        font-size: 1.2rem;
+        color: var( --text-grey);
+    }
+    
+    .mobileLeftAlign {
+        text-align: left;
+    }
+    
+    .mobileCenterAlign {
+        text-align: center;
+    }
+    
+    .linkWrapper {
+    display: flex;
+    margin-top: 1.5rem;
+    }
+    
+    .link {
+        display: flex;
+        align-items: center;
+        color: var(--brand-blue);
+        border-radius: 10px;
+        transition: all 450ms ease;
+        text-transform: uppercase;
+        transition: all 450ms ease;
+        margin-right: .5rem;
+        font-weight: bold;
+    }
+    
+    .link svg {
+        transition: all 450ms ease;
+        margin-left: .5rem;
+    }
+    
+    .link:hover svg {
+        margin-left: 1rem;
+    }
+    
+    /* .link:hover {
+        text-decoration: underline;
+    } */
+    
+    .btn {
+        background-color: var(--brand-blue);
+        padding: .75rem 1.5rem;
+        color: var(--brand-white);
+        border-radius: 10px;
+        transition: all 450ms ease;
+        border: solid 1px var(--brand-blue);
+        text-transform: uppercase;
+    }
+    
+    .btn:hover {
+        background-color: #FFE600;
+        color: var(--brand-blue);
+        border: solid 1px var(--brand-blue);
+    }
+    
+    /* .mobileCenterAlign h1::after {
+        content: " ";
+        margin: 1rem auto;
+        width: 74px;
+        display: block;
+        position: relative;
+        height: 5px;
+        background-color: rgb(255, 230, 0);
+    } */
+    
+    .mobileLeftAlign h1::after {
+        content: " ";
+        margin: 1rem 0;
+        width: 74px;
+        display: block;
+        position: relative;
+        height: 5px;
+        background-color: rgb(255, 230, 0);
+    }
+
 }

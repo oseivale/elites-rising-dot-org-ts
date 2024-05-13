@@ -84,7 +84,7 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
             }
           >
             <Link href="/" passHref>
-              <span className={style.navLogo}>ICON</span>{" "}
+              <span className={style.navLogo}><TestLogo /></span>{" "}
               {/* Adjust if you use an image or icon here */}
             </Link>
 
