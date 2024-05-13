@@ -89,7 +89,7 @@
 }
 
 .navLogo svg {
-    font-size: 4rem;
+    font-size: 2rem;
     margin-right: 2rem;
     color: var(--brand-white)
 }
@@ -158,6 +158,12 @@
 
 
 @media screen and (min-width: 740px) {
+    .navLogo svg {
+        font-size: 4rem;
+        margin-right: 2rem;
+        color: var(--brand-white)
+    }
+
     .mobileNavWrapper, .mobileNavWrapper a, .open, .close {
         display: none;
     }

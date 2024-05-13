@@ -16,6 +16,31 @@
 }
 
 .slideImage{
-   height: 100px;
-   width: 110px; 
+   height: 75px;
+   width: 100px; 
+}
+
+@media screen and (min-width: 740px) {
+    .embla {
+        overflow: hidden;
+        max-width: 1080px;
+        width: 50%;
+        margin: 0 auto;
+      }
+      .embla__container {
+        display: flex;
+        align-items: center;
+      }
+      .embla__slide {
+        display: flex;
+        justify-content: center;
+        flex: 0 0 20%;
+        min-width: 0;
+      }
+      
+      .slideImage{
+         height: 100px;
+         width: 110px; 
+      }
+
 }
