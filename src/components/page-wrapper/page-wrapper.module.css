@@ -1,0 +1,221 @@
+.pageHeader {
+  background-image: linear-gradient(
+      to left,
+      rgba(2, 9, 82, 0.93),
+      rgba(2, 9, 82, 0.93)
+    ),
+    url("/pattern_circles-8_1_3_0-0_20_1__ffffff_805ad5 (1).jpg");
+  /* background-image: linear-gradient(to left, rgba(236, 236, 236, 0.93), rgba(236, 236, 236, 0.93)), url("/pattern_circles-8_1_3_0-0_20_1__ffffff_805ad5 (1).jpg"); */
+  /* background-image: linear-gradient(to left, rgba(222, 222, 49 , 0.93), rgba(222, 222, 49 , 0.93)), url("/pattern_circles-8_1_3_0-0_20_1__ffffff_805ad5 (1).jpg"); */
+  background-size: cover;
+  height: 58.5vh;
+  width: 100%;
+}
+
+.pageWrapper {
+  width: 100%;
+}
+
+.content {
+  margin: 3rem auto;
+  width: 90%;
+}
+
+.content h1 {
+  color: var(--brand-blue);
+  font-size: 1.85rem;
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.content p {
+  color: var(--text-grey);
+  font-size: 1.2rem;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+.sideBar {
+  width: 90%;
+  line-height: 25px;
+  margin: 0 auto;
+}
+
+.sideBar div {
+  margin-bottom: 2rem;
+  border-left: solid 0.5px var(--brand-blue);
+  padding-left: 1rem;
+}
+
+.sideBar h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-blue);
+  margin-bottom: 0.1rem;
+}
+
+.sideBar p {
+  font-size: 1.1rem;
+  color: var(--brand-blue);
+  line-height: 25px;
+}
+
+.quickLink {
+  color: var(--brand-blue);
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.headerWrapper h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--brand-white);
+  /* align-items: center; */
+}
+
+.headerWrapper h1::after {
+  content: " ";
+  width: 74px;
+  display: block;
+  position: relative;
+  height: 2px;
+  background-color: var(--brand-white);
+}
+
+.imageWrapper {
+  display: none;
+}
+
+.mobileHeaderImg {
+  position: relative;
+  height: 30vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: 0% 20%;
+  top: 6.75rem;
+  border-top-right-radius: 100%;
+  border-top-left-radius: 100%;
+  border: solid 1px white;
+}
+
+@media screen and (min-width: 1070px) {
+  .pageHeader {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileHeaderImg {
+    display: none;
+  }
+
+  .headerWrapper h1 {
+    font-size: 4.3rem;
+    font-weight: 300;
+    color: var(--brand-white);
+    text-align: left;
+  }
+
+  .sideBar h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand-blue);
+    margin-bottom: 0.1rem;
+    line-height: 30px;
+  }
+
+  .sideBar p {
+    font-size: 1.1rem;
+    color: var(--brand-blue);
+    line-height: 25px;
+  }
+
+  .quickLink {
+    color: var(--brand-blue);
+  }
+
+  .content {
+    margin: 0;
+    width: 90%;
+  }
+
+  .content h1 {
+    color: var(--brand-blue);
+    font-size: 1.85rem;
+    font-weight: 600;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    color: var(--text-grey);
+    font-size: 1.2rem;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-left: 1rem;
+  }
+
+  .contentWrapper {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    margin: 4rem auto;
+    max-width: 1080px;
+  }
+
+  .headerWrapper {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    margin: 0 auto;
+    max-width: 1080px;
+    color: var(--brand-white);
+  }
+
+  .headerWrapper h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 68px;
+    letter-spacing: 0.3px;
+  }
+
+  .headerWrapper h1::after {
+    content: " ";
+    width: 74px;
+    display: block;
+    position: relative;
+    height: 2px;
+    margin-top: 1.5rem;
+    margin-left: .25rem;
+    background-color: var(--brand-white);
+  }
+
+  .imageWrapper {
+    background-image: url("/zachary-nelson-98Elr-LIvD8-unsplash (1).jpg");
+    background-size: cover;
+    background-position: right center;
+    top: 0.25rem;
+    clip-path: ellipse(2000px 400px at 55% 23%);
+    position: absolute;
+    right: -13rem;
+    height: 65vh;
+    width: 80vh;
+    border-radius: 100%;
+    display: block;
+    border: solid 10px white;
+  }
+}

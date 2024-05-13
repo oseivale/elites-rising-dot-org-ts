@@ -1,0 +1,130 @@
+.footerContainer {
+    /* height: 40vh; */
+    /* background-color: rgba(2, 9, 82); */
+    background-image: linear-gradient(to left, rgba(2, 9, 82, .97), rgba(2, 9, 82, 0.97)), url("/pattern_circles-8_1_3_0-0_20_1__ffffff_805ad5 (1).jpg");
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerbtn{
+    color: white;
+    font-weight: bold;
+}
+
+.socialLinksContainer{
+    color: var(--brand-white);
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    font-weight: 800;
+}
+
+.socialLinksWrapper {
+    display: flex;
+    align-items: center;
+    /* margin: 1rem auto; */
+}
+
+.socialLinksWrapper div {
+    font-size: 1.75rem;
+    /* margin-top: 2rem; */
+}
+
+.footerGridWrapper {
+    display: flex;
+    flex: 0 1;
+    max-width: 980px;
+    margin: 3rem auto;
+    width: 100%;
+}
+
+.footerGridWrapper div{
+    width: 50%;
+}
+
+.footerGridWrapper p{
+    color: var(--brand-white);
+}
+
+.footerGridWrapper h1{
+    color: var(--brand-white);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.footerGridWrapper li {
+    line-height: 40px;
+}
+
+.footerGridWrapper ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.copyrightText {
+    color: var(--brand-white);
+    margin: .75rem 0;
+}
+
+.mobileLinkList h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* color: var(--brand-yellow) */
+}
+
+/* .mobileLinkList a {
+    font-size: 1.2rem;
+} */
+
+@media screen and (max-width: 600px) {
+    .socialLinksContainer{
+        color: var(--brand-white);
+        display: flex;
+    }
+
+    .footerGridWrapper div{
+        width: auto;
+    }
+    
+    .socialLinksWrapper {
+        display: flex;
+        align-items: center;
+        margin: 0rem auto;
+    }
+    
+    .socialLinksWrapper div {
+        font-size: 1.75rem;
+        margin: .5rem;
+    }
+
+    .footerGridWrapper {
+        flex-direction: column-reverse;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        margin: 3rem 0;
+       
+    }
+
+    .footerContainer{
+        height: auto;
+        width: 100%;
+    }
+
+    .footerGridWrapper div li a{
+        font-size: 1rem;
+    }
+
+    .footerGridWrapper ul {
+        margin-top: 0;
+    }
+
+
+}

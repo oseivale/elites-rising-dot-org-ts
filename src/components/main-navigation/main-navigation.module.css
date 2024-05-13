@@ -1,0 +1,252 @@
+.navContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+
+.donate {
+    margin-left: 4rem;
+    background-color: var(--brand-white);
+    color: var(--brand-blue);
+    padding: .5rem 2rem;
+    border-radius: 25px;
+    border: solid 1px var(--brand-white);
+    transition: all 400ms ease;
+}
+
+.donate:hover {
+    background-color: var(--brand-blue);
+    color: var(--brand-white);
+    border: solid 1px var(--brand-white);
+}
+
+.navWrapper{
+    display: none;
+}
+
+.mobileNavWrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: transparent;
+    height: 8vh;
+    justify-content: space-between;
+    z-index: 2;
+    padding: 1rem;
+}
+
+.mobileNavWrapper button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2.4rem;
+    z-index: 2;
+}
+
+.open{
+    height: 100vh;
+    background-image: linear-gradient(to left, rgba(2, 9, 82, 0.93), rgba(2, 9, 82, 0.93)), url("/pattern_circles-8_1_3_0-0_20_1__ffffff_805ad5 (1).jpg");
+    background-size: cover;
+    animation: expandMobileNav 450ms ease-in-out;
+}
+
+.close {
+    z-index: 2;
+    height: 8vh;
+    /* background-color: rgb(2, 9, 82); */
+    animation: collapseMobileNav 450ms ease-in-out;
+}
+
+.mobileNavLinkWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.mobileNavLinkWrapper li {
+    list-style-type: none;
+    
+}
+
+.mobileNavLinkWrapper a {
+    text-decoration: none;
+    font-size: 2rem;
+    display: inline-block;
+    margin: 1rem 0;
+    color: #fff;
+    animation: fadeIn 450ms ease-in-out; 
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+    /* top: 1rem; */
+}
+
+.navLogo svg {
+    font-size: 4rem;
+    margin-right: 2rem;
+    color: var(--brand-white)
+}
+
+@keyframes fadeOutNav {
+    from {
+        height: 8vh;
+    }
+    to {
+        height: 0;
+    }
+}
+
+@keyframes fadeInNav {
+    from {
+        height: 0;
+    }
+    to {
+        height: 8vh;
+    }
+}
+
+@keyframes expandMobileNav {
+    from {
+        height: 8vh;
+    }
+    to {
+        height: 100vh;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes collapseMobileNav {
+    from {
+        height: auto;
+    }
+    to {
+        height: 8vh;
+    }
+}
+
+.mobileNavContainer{
+    display: none;
+}
+
+.coloredNavWrapper {
+    display: none;
+}
+
+
+@media screen and (min-width: 740px) {
+    .mobileNavWrapper, .mobileNavWrapper a, .open, .close {
+        display: none;
+    }
+
+    .mobileNavContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        /* background-color: var(--brand-blue); */
+        /* background-color: rgb(2, 9, 82); */
+        display: block;
+    }
+
+    .coloredNavWrapper {
+        display: none;
+    }
+
+    .donate {
+        margin-left: 4rem;
+        background-color: var(--brand-white);
+        color: var(--brand-blue);
+    }
+    
+    .navContainer {
+        height: auto;
+    }
+
+    .navWrapper {
+        display: flex;
+        align-items: center;
+        /* background-color: var(--brand-blue); */
+        justify-content: flex-start;
+        z-index: 2;
+        max-width: 1080px;
+        margin: 0 auto;
+        width: 100%;
+        height: 13vh;
+    }
+
+    .navWrapper ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .navLink {
+        text-decoration: none;
+        color: var(--brand-white);
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .navWrapper li::after {
+        content: " ";
+        margin: .2rem 0;
+        width: 0%;
+        display: block;
+        position: relative;
+        height: 2px;
+        background-color: var(--brand-white);
+        transition: all 450ms ease;
+    }
+
+
+    .navWrapper li:hover::after {
+        content: " ";
+        margin: .2rem 0;
+        width: 50px;
+        display: block;
+        position: relative;
+        height: 2px;
+        background-color: var(--brand-white);
+        transition: all 450ms ease;    
+    }
+
+    .navWrapper li {
+        list-style-type: none;
+        margin: 0 1rem;
+    }
+
+}
+
+@keyframes navHover {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
