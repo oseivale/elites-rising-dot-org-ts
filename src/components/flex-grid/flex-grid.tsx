@@ -1,31 +1,60 @@
 "use client";
 import Image from "next/image";
 import React, { ReactNode, useEffect, useState } from "react";
-import { TextWithCTA } from "./text-with-cta/text-with-cta";
+import { TextWithCTA } from "../text-with-cta/text-with-cta";
 import Link from "next/link";
-import { LinkCard } from "./link-card/link-card";
-import CardComponent from "./info-card/info-card";
-import { EmblaCarousel } from "./carousel/carousel";
+import { LinkCard } from "../link-card/link-card";
+import CardComponent from "../info-card/info-card";
+import { EmblaCarousel } from "../carousel/carousel";
+import styles from './flex-grid.module.css'
 
 interface FlexGridProps {
   content: any[]; // Accepts any ReactNode as children
   cols?: number; // Optional prop to define the number of columns
 }
 
-const FlexGrid: React.FC<FlexGridProps> = ({ content, cols = 4 }) => {
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  useEffect(() => {
-    // Function to update the state with the new window width
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+const FlexGrid: React.FC<FlexGridProps> = ({ content, cols=1 }) => {
+  // const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const { width, height }: any = useWindowSize();
 
-    // Adding the event listener for window resize
-    window.addEventListener("resize", handleResize);
+  function useWindowSize() {
+    const isSSR = typeof window === 'undefined';
+    const [windowSize, setWindowSize] = useState({
+      width: isSSR ? 1200 : window.innerWidth, // Default width during SSR
+      height: isSSR ? 800 : window.innerHeight, // Default height during SSR
+    });
+  
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+  
+    useEffect(() => {
+      if (!isSSR) {
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }
+    }, []);
+  
+    return windowSize;
+  }
+  // useEffect(() => {
+  //   // Function to update the state with the new window width
+  //   const handleResize = () => {
+  //     if (typeof window !== "undefined") {
+  //       // Safe to access window object
+  //       setWindowWidth(window.innerWidth);
+  //       console.log(window.location.href);
+  //       // Adding the event listener for window resize
+  //       window.addEventListener("resize", handleResize);
+  //     }
+  //   };
 
-    // Cleanup function to remove the event listener
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty dependency array ensures the effect runs only on mount and unmount
+  //   // Cleanup function to remove the event listener
+  //   return () => window !== null && window.removeEventListener("resize", handleResize);
+  // }, []); 
 
   // Calculate width from columns number
   const colWidth = Math.floor(100 / cols);
@@ -100,22 +129,22 @@ const FlexGrid: React.FC<FlexGridProps> = ({ content, cols = 4 }) => {
         );
       case "carousel":
         return (
-            <div style={{ padding: "5rem 0" }}>
-              <EmblaCarousel slides={type.fields.slides} />
-            </div>
-          );
+          <div style={{ padding: "5rem 0" }}>
+            <EmblaCarousel slides={type.fields.slides} />
+          </div>
+        );
       default:
         return <div>NOTHING</div>;
     }
   };
 
   return (
-    <div className={windowWidth > 740 ? "flex flex-wrap -mx-2" : ""}>
+    <div className={styles.flexGridDesktop}>
       {content?.map((item) => {
         return (
           <div
             key={item?.sys.id}
-            style={windowWidth > 740 ? gridStyle : mobileGridStyle}
+            style={width > 740 ? gridStyle : mobileGridStyle}
           >
             {renderComponent(item)}
           </div>

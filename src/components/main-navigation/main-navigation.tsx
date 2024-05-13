@@ -26,51 +26,28 @@ interface MainNavProps {
   navigationLinks: NavLink[];
 }
 
-
-
 export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const [activeLink, setActiveLink] = useState<boolean>(false);
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [scrollY, setScrollY] = useState<number>(0);
-
-//   function useActiveLink(targetPath:string) {
-//     const pathname = usePathname();
-//     return pathname === targetPath ? style["active"] : "";
-// } 
-
-  useEffect(() => {
-    // Function to update the state with the new window width
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-
-    // Adding the event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup function to remove the event listener
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty dependency array ensures the effect runs only on mount and unmount
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (typeof window !== "undefined") {
+        setScrollY(window.scrollY);
+      }
     };
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- 
   const toggleOpen = () => {
     setOpen(!open);
   };
 
   return (
     <>
-      {windowWidth < 740 ? (
         <nav
           className={`${style.navContainer} ${open ? style.open : style.close}`}
         >
@@ -100,7 +77,7 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
             </ul>
           )}
         </nav>
-      ) : (
+
         <nav className={style.mobileNavContainer}>
           <div
             className={
@@ -132,7 +109,6 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
             </ul>
           </div>
         </nav>
-      )}
     </>
   );
 };

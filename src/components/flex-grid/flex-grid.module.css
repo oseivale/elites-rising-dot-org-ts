@@ -1,0 +1,26 @@
+
+.flexGridDesktop {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap ;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mobileGridStyle {
+    max-width: 100%;
+    padding: 1rem;
+    justify-content: center;
+}
+
+@media screen and (min-width: 740px) {
+
+    .flexGridDesktop {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+      }
+   
+}

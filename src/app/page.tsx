@@ -1,5 +1,5 @@
 import { EmblaCarousel } from "@/components/carousel/carousel";
-import FlexGrid from "@/components/flex-grid";
+import FlexGrid from "@/components/flex-grid/flex-grid";
 import { HeroBanner } from "@/components/hero-banner/hero-banner";
 import { Layout } from "@/components/layout/layout";
 import Navbar from "@/components/main-navigation/main-navigation";
@@ -33,6 +33,7 @@ export default async function Home() {
     pageData.props.entries.items[0].fields.globalHeader.fields.heroSection;
 
   const createSection = (pageRows: any) => {
+    
     return pageRows.map((row: any) => {
       console.log("row", row.fields);
 

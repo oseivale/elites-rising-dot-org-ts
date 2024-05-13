@@ -184,7 +184,7 @@
     }
     
     .navContainer {
-        height: auto;
+        display: none;
     }
 
     .navWrapper {
