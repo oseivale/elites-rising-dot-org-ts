@@ -30,6 +30,32 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
 
+// function useWindowSize() {
+//   const isSSR = typeof window === 'undefined';
+//   const [windowSize, setWindowSize] = useState({
+//     width: 1200, // Default width during SSR
+//     height: 800, // Default height during SSR
+//   });
+
+//   function handleResize() {
+//     setWindowSize({
+//       width: isSSR ? 1200 : window.innerWidth,
+//       height: isSSR ? 800 : window.innerHeight,
+//     });
+//   }
+
+//   useEffect(() => {
+//     if (!isSSR) {
+//       window.addEventListener('resize', handleResize);
+//       return () => window.removeEventListener('resize', handleResize);
+//     }
+//   }, []);
+
+//   return windowSize;
+// }
+
+// const { width, height }: any = useWindowSize();
+
   useEffect(() => {
     const handleScroll = () => {
       if (typeof window !== "undefined") {
@@ -48,6 +74,7 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
 
   return (
     <>
+  
         <nav
           className={`${style.navContainer} ${open ? style.open : style.close}`}
         >
@@ -109,6 +136,7 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
             </ul>
           </div>
         </nav>
+
     </>
   );
 };

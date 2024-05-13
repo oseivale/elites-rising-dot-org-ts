@@ -1,35 +1,90 @@
 .card {
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  height: 325px;
+  padding-top: 1rem;
+}
+
+/* .card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  } */
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.cardImage {
+  width: 75px;
+  height: 75px;
+}
+
+.cardContent {
+  padding: 16px;
+  text-align: center;
+}
+
+.cardHeader {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--brand-blue);
+  font-size: 12px;
+  text-align: center;
+}
+
+.cardSubheader {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #666;
+  font-size: 16px;
+}
+
+.cardDescription {
+  margin-top: 0;
+  color: #444;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 740px) {
+  .card {
     width: 100%;
     max-width: 320px;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
     height: 325px;
     padding-top: 1rem;
   }
-  
-  /* .card:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  } */
 
-  .imageWrapper{
+  /* .card:hover {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      } */
+
+  .imageWrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 0 1rem;
   }
-  
+
   .cardImage {
     width: 45px;
     height: 45px;
   }
-  
+
   .cardContent {
     padding: 16px;
   }
-  
+
   .cardHeader {
     margin-top: 0;
     margin-bottom: 8px;
@@ -37,17 +92,17 @@
     font-size: 12px;
     text-align: left !important;
   }
-  
+
   .cardSubheader {
     margin-top: 0;
     margin-bottom: 16px;
     color: #666;
     font-size: 16px;
   }
-  
+
   .cardDescription {
     margin-top: 0;
     color: #444;
     font-size: 14px;
   }
-  
+}

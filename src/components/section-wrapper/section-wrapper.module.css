@@ -5,7 +5,7 @@
     min-height: 30vh;
     height: 100%;
     align-items: center;
-    padding: 2.5rem 0;
+    padding: 1rem 0;
 }
 
 .sectionWrapper{
@@ -24,6 +24,7 @@
     /* font-weight: bold; */
     color: var(--brand-blue);
     text-align: center;
+    /* margin-top: 2rem; */
 }
 
 .sectionContainer h2 {
