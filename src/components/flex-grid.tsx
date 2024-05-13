@@ -112,7 +112,6 @@ const FlexGrid: React.FC<FlexGridProps> = ({ content, cols = 4 }) => {
   return (
     <div className={windowWidth > 740 ? "flex flex-wrap -mx-2" : ""}>
       {content?.map((item) => {
-        console.log("item", item?.fields);
         return (
           <div
             key={item?.sys.id}

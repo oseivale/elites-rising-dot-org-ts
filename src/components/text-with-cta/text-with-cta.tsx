@@ -59,7 +59,7 @@ export function TextWithCTA({ header, subheader, bodyCopy, contentAlignment, cta
         <div className={style.linkWrapper}>
         {ctas.map((cta: any) => {
             return (
-                <Link className={`${style.link} ${nunito_sans.className}`} href={cta.fields.internalPath}>{cta.fields.linkLabel}<ArrowForward /></Link>
+                <Link key={cta.sys.id} className={`${style.link} ${nunito_sans.className}`} href={cta.fields.internalPath}>{cta.fields.linkLabel}<ArrowForward /></Link>
             )
         })}
       </div>

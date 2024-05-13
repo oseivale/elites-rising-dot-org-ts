@@ -45,7 +45,7 @@ export function HeroBanner({
           <div className={style.linkWrapper}>
             {ctas.map((cta: any) => {
               return (
-                <PageLink type={'button'} path={cta.fields.internalPath} linkLabel={cta.fields.linkLabel} />
+                <PageLink key={cta.sys.id} type={'button'} path={cta.fields.internalPath} linkLabel={cta.fields.linkLabel} />
               );
             })}
           </div>

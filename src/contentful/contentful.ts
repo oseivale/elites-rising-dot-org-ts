@@ -24,13 +24,13 @@ export function getContentfulClient(): ContentfulClientApi<undefined>  {
   return clientInstance;
 }
 
-export const loader: LoaderFunction = async () => {
+export const loader: () => any = async () => {
     // Fetch data here
     const client = getContentfulClient();
     
     
     // Assuming you know your Content Type ID, for example, 'blogPost'
-    const entries = await client.getEntries<Document>({
+    const entries = await client.getEntries<any>({
       content_type: 'siteConfiguration',
       include: 10
     });

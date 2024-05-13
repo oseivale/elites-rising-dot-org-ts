@@ -37,7 +37,6 @@ export default async function Events() {
         >
           <section>
             {eventsPageData.fields.pageRows.map((row: any) => {
-              console.log("row", row.fields.foregroundContent[0].fields.header);
 
               return (
                 <div key={row.fields.foregroundContent[0].fields.header}>

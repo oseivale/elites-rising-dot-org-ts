@@ -34,10 +34,10 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [scrollY, setScrollY] = useState<number>(0);
 
-  function useActiveLink(targetPath:string) {
-    const pathname = usePathname();
-    return pathname === targetPath ? style["active"] : "";
-} 
+//   function useActiveLink(targetPath:string) {
+//     const pathname = usePathname();
+//     return pathname === targetPath ? style["active"] : "";
+// } 
 
   useEffect(() => {
     // Function to update the state with the new window width
@@ -91,7 +91,7 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
           {open && (
             <ul className={style.mobileNavLinkWrapper}>
               {navigationLinks.map((navLink, index) => (
-                <li className={nunito_sans.className} key={index}>
+                <li className={nunito_sans.className} key={navLink.sys.id}>
                   <Link href={navLink.fields.internalPath || ""} passHref>
                     <span>{navLink.fields.linkLabel}</span>
                   </Link>
@@ -115,7 +115,7 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
             <ul>
               {navigationLinks.map((navLink, index) => (
                 <li
-                  className={`${style.linkWrapper} ${nunito_sans.className} ${useActiveLink(navLink.fields.internalPath)}`}
+                  className={`${style.linkWrapper} ${nunito_sans.className}`}
                   key={navLink.sys.id}
                 >
                   <Link

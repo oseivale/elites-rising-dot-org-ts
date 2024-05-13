@@ -35,9 +35,10 @@ export default async function Home() {
   const createSection = (pageRows: any) => {
     return pageRows.map((row: any) => {
       console.log("row", row.fields);
-      
+
       return (
         <SectionWrapper
+          key={row?.sys.id}
           hashId={row?.fields?.hashId}
           sectionHeader={row?.fields?.sectionHeader}
         >
