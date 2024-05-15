@@ -1,14 +1,21 @@
-.link {
+.linkPrimary, .linkSecondary {
   display: flex;
   font-weight: bold;
   align-items: center;
-  color: var(--brand-white);
   border-radius: 10px;
   transition: all 450ms ease;
   text-transform: uppercase;
   transition: all 450ms ease;
   margin-top: 2rem;
   margin-right: 0.5rem;
+}
+
+.linkPrimary {
+    color: var(--brand-white);
+}
+
+.linkSecondary {
+    color: var(--brand-blue);
 }
 
 .btn {
@@ -27,12 +34,12 @@
   margin-right: 0.5rem;
 }
 
-.link svg {
+.linkPrimary svg, .linkSecondary svg {
   transition: all 450ms ease;
   margin-left: 0.5rem;
 }
 
-.link:hover svg {
+.linkPrimary:hover svg, .linkSecondary:hover svg {
   margin-left: 1rem;
 }
 

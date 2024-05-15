@@ -9,7 +9,7 @@ export function LinkCard({
   imgWidth,
 }: any) {
   return (
-    <Link className={style.cardWrapper} href={externalUrl} style={{ display: "inline-block" }}>
+    <Link className={style.cardWrapper} href={externalUrl} style={{ display: "inline-block" }} target="_blank">
       <Image className={style.cardImage} src={mainImage} height={imgHeight} width={imgWidth} alt="" />
     </Link>
   );

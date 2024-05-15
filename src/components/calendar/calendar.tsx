@@ -7,6 +7,7 @@ import { Location } from "@/icons/location";
 import { Alert } from "@/icons/alert";
 import Link from "next/link";
 import { format, isSameDay } from "date-fns";
+import { candal, nunito_sans } from "@/fonts/fonts";
 
 interface Event {
   id: string;
@@ -128,21 +129,21 @@ const Calendar = () => {
           {eventsForSelectedDate && eventsForSelectedDate.length > 0 ? (
             eventsForSelectedDate.map((event) => (
               <Link
-                className={styles.eventInfo}
+                className={`${styles.eventInfo}`}
                 key={event.id}
                 href={`/events/${event.title
                   .toLowerCase()
                   .split(" ")
                   .join("-")}`}
               >
-                <span className={styles.eventLink}>{event.title}</span>
+                <span className={`${candal.className} ${styles.eventLink}`}>{event.title}</span>
                 <span className={styles.time}>
-                  <Clock />
-                  <span>{event.time}</span>
-                  <Location />
-                  <span>{event.location}</span>
+                  
+                  <span className={nunito_sans.className}><Clock />{event.time}</span>
+                  
+                  <span className={`${nunito_sans.className} ${styles.location}`}><Location />{event.location}</span>
                 </span>
-                <span className={styles.eventDescription}>
+                <span className={`${nunito_sans.className} ${styles.eventDescription}`}>
                   {event.description}
                 </span>
               </Link>
