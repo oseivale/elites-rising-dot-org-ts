@@ -19,15 +19,17 @@ export function HeroBanner({
     const formattedText = text.split("|");
     return formattedText;
   };
+
+  console.log('desktopBgImage', desktopBgImage)
   return (
     <section className={style.heroContainer}>
       <div className={style.heroImgWrapper}>
         <Image
           className={style.heroImg}
           alt="Hero Banner" // Improved alt text for accessibility
-          src="/tamarcus-brown-T3uKisfmABY-unsplash.jpg"
-          width={1000}
-          height={1000}
+          src={`https:${desktopBgImage}`}
+          width={2000}
+          height={2000}
         />
       </div>
       <div className={style.contentWrapper}>

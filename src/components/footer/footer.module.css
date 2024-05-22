@@ -28,9 +28,9 @@
     /* margin: 1rem auto; */
 }
 
-.socialLinksWrapper div {
+.socialLinksWrapper a {
     font-size: 1.75rem;
-    /* margin-top: 2rem; */
+    margin: 0 .75rem .2rem 0;
 }
 
 .footerGridWrapper {

@@ -8,6 +8,9 @@ import { Alert } from "@/icons/alert";
 import Link from "next/link";
 import { format, isSameDay } from "date-fns";
 import { candal, nunito_sans } from "@/fonts/fonts";
+import "react-responsive-modal/styles.css";
+import Modal from "react-responsive-modal";
+import { ArrowForward } from "@/icons/arrow-forward";
 
 interface Event {
   id: string;
@@ -41,7 +44,7 @@ const events: Event[] = [
     When: [Insert Date & Time]
     Where: [Insert Venue Details]
     Admission: Free (Registration required)
-    Don’t miss this fantastic opportunity to be part of a movement that's shaping the future of black excellence in Toronto and beyond. Spaces are limited, so secure your spot today!`
+    Don’t miss this fantastic opportunity to be part of a movement that's shaping the future of black excellence in Toronto and beyond. Spaces are limited, so secure your spot today!`,
   },
   // Additional event objects can be added here
 ];
@@ -51,6 +54,11 @@ const Calendar = () => {
   const [eventsForSelectedDate, setEventsForSelectedDate] = useState<
     Event[] | null
   >(null);
+
+  const [open, setOpen] = useState(false);
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
 
   useEffect(() => {
     const currentDate = new Date();
@@ -68,6 +76,7 @@ const Calendar = () => {
   };
 
   const handleDayClick = (day: Date): void => {
+    setOpen(true);
     setSelectedDate(day);
     const eventsForDay = filterEventsByDate(events, day);
     setEventsForSelectedDate(eventsForDay);
@@ -128,25 +137,59 @@ const Calendar = () => {
         <div className={styles.eventWrapper}>
           {eventsForSelectedDate && eventsForSelectedDate.length > 0 ? (
             eventsForSelectedDate.map((event) => (
-              <Link
-                className={`${styles.eventInfo}`}
-                key={event.id}
-                href={`/events/${event.title
-                  .toLowerCase()
-                  .split(" ")
-                  .join("-")}`}
-              >
-                <span className={`${candal.className} ${styles.eventLink}`}>{event.title}</span>
-                <span className={styles.time}>
-                  
-                  <span className={nunito_sans.className}><Clock />{event.time}</span>
-                  
-                  <span className={`${nunito_sans.className} ${styles.location}`}><Location />{event.location}</span>
-                </span>
-                <span className={`${nunito_sans.className} ${styles.eventDescription}`}>
-                  {event.description}
-                </span>
-              </Link>
+              //   <Link
+              //     className={`${styles.eventInfo}`}
+              //     key={event.id}
+              //     href={`/events/${event.title
+              //       .toLowerCase()
+              //       .split(" ")
+              //       .join("-")}`}
+              //   >
+              //     <span className={`${candal.className} ${styles.eventLink}`}>{event.title}</span>
+              //     <span className={styles.time}>
+
+              //       <span className={nunito_sans.className}><Clock />{event.time}</span>
+
+              //       <span className={`${nunito_sans.className} ${styles.location}`}><Location />{event.location}</span>
+              //     </span>
+              //     <span className={`${nunito_sans.className} ${styles.eventDescription}`}>
+              //       {event.description}
+              //     </span>
+              //   </Link>
+              <div>
+                {/* <button onClick={onOpenModal}>Open modal</button> */}
+                <Modal open={open} onClose={onCloseModal} center>
+                  <span className={`${candal.className} ${styles.eventLink}`}>
+                    {event.title}
+                  </span>
+                  <span className={styles.time}>
+                    <span className={nunito_sans.className}>
+                      <Clock />
+                      {event.time}
+                    </span>
+
+                    <span
+                      className={`${nunito_sans.className} ${styles.location}`}
+                    >
+                      <Location />
+                      {event.location}
+                    </span>
+                  </span>
+                  <span
+                    className={`${nunito_sans.className} ${styles.eventDescription}`}
+                  >
+                    {event.description}
+                  </span>
+                  <Link
+                    className={`${styles.eventInfo}`}
+                    key={event.id}
+                    href={`/events/${event.title
+                      .toLowerCase()
+                      .split(" ")
+                      .join("-")}`}
+                  >View Event Details<ArrowForward /></Link>
+                </Modal>
+              </div>
             ))
           ) : (
             <p className={styles.noEventDescription}>

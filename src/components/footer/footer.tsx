@@ -41,12 +41,12 @@ export function Footer({ footerLinks, socialLogos, brandLogo }: FooterProps) {
           <div className={style.socialLinksContainer}>
             <h1>Stay Connected</h1>
             <div className={style.socialLinksWrapper}>
-              <div>
+              <Link href='https://www.linkedin.com/company/elites-rising/' target="_blank">
                 <LinkedIn />
-              </div>
-              <div>
+              </Link>
+              <Link href='https://www.instagram.com/elitesrising/' target="_blank">
                 <Instagram />
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ export function Footer({ footerLinks, socialLogos, brandLogo }: FooterProps) {
       <div>
         <p
           className={style.copyrightText}
-        >{`Copyright ${new Date().getFullYear()} | Elites Rising`}</p>
+        >&copy; {`Copyright ${new Date().getFullYear()} | Elites Rising`}</p>
       </div>
     </footer>
   );

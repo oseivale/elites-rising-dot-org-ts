@@ -52,6 +52,8 @@ export default async function Home() {
     });
   };
 
+  console.log('heroData', heroData.fields.desktopBackgroundImage.fields.file.url)
+
   return (
     <>
       <head>
@@ -73,7 +75,7 @@ export default async function Home() {
       </head>
       <Layout>
         <HeroBanner
-          desktopBgImage={""}
+          desktopBgImage={heroData.fields.desktopBackgroundImage.fields.file.url}
           sectionHeader={heroData.fields.sectionHeader}
           sectionSubheader={heroData.fields.sectionSubheader}
           ctas={heroData.fields.foregroundContent}
