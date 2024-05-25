@@ -187,7 +187,7 @@ function ContactForm() {
       </label>
 
       <label className={style.formLabel}>
-        Anything else you'd like to share?
+      {`Anything else you'd like to share?`}
         <textarea
           className={style.formInput}
           name="message"
