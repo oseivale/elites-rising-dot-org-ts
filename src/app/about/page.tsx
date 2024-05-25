@@ -7,13 +7,13 @@ export default async function OurStory() {
   const pageData = await loader();
   const ourStoryPageData =
     pageData.props.entries.items[0].fields.sitePages.filter(
-      (page: any) => page.fields.path === "/about"
+      (page: any) => page?.fields?.path === "/about"
     )[0];
 
   console.log(
     "pageData",
     pageData.props.entries.items[0].fields.sitePages.filter(
-      (page: any) => page.fields.path === "/about"
+      (page: any) => page?.fields?.path === "/about"
     )
   );
 

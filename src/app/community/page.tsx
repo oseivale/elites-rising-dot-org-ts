@@ -7,7 +7,7 @@ export default async function Community() {
   const pageData = await loader();
   const communityPageData =
     pageData.props.entries.items[0].fields.sitePages.filter(
-      (page: any) => page.fields.path === "/community"
+      (page: any) => page?.fields?.path === "/community"
     )[0];
 
   return (

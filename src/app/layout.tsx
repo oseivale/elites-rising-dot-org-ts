@@ -13,8 +13,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const pageData = await loader();
-  const homePageData = pageData.props.entries.items[0].fields.sitePages.filter(
-    (page: any) => page.fields.path === '/'
+  const homePageData = pageData?.props?.entries?.items[0]?.fields?.sitePages?.filter(
+    (page: any) => page?.fields?.path === '/'
   )[0];
 
   console.log('pageData', pageData)

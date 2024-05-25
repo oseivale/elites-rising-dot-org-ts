@@ -21,14 +21,13 @@ export const Layout: React.FC<LayoutProps> = async ({
     <>
       <MainNav
         navigationLinks={
-          pageData.props.entries.items[0].fields.globalHeader.fields
-            .mainNavigation.fields.navigationLinks
+          pageData?.props?.entries?.items[0]?.fields?.globalHeader?.fields?.mainNavigation?.fields?.navigationLinks
         }
       />
       <main>{children}</main>
       <Footer
         footerLinks={
-          pageData.props.entries.items[0].fields.globalFooter.fields.footerLinks
+          pageData?.props?.entries?.items[0]?.fields?.globalFooter?.fields?.footerLinks
         }
       />
     </>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 // import { PageLink } from "../PageLink/PageLink";
 import style from "./footer.module.css";
-import { nunito_sans } from "@/fonts/fonts";
+import { candal, nunito_sans } from "@/fonts/fonts";
 import { Facebook } from "@/icons/facebook";
 import { LinkedIn } from "@/icons/linkedin";
 import { Instagram } from "@/icons/instagram";
@@ -39,7 +39,7 @@ export function Footer({ footerLinks, socialLogos, brandLogo }: FooterProps) {
           <p>+1 (647) 572-7559</p>
           <p>elitesrising@gmail.com</p>
           <div className={style.socialLinksContainer}>
-            <h1>Stay Connected</h1>
+            <h1 className={style.stayConnectedHeader}>Stay Connected</h1>
             <div className={style.socialLinksWrapper}>
               <Link href='https://www.linkedin.com/company/elites-rising/' target="_blank">
                 <LinkedIn />
@@ -51,24 +51,24 @@ export function Footer({ footerLinks, socialLogos, brandLogo }: FooterProps) {
           </div>
         </div>
         <div className={`${style.mobileLinkList} ${nunito_sans.className}`}>
-          <h1>Quick Links</h1>
+          <h1 className={style.quickLinksHeader}>Quick Links</h1>
           <ul>
             {footerLinks.map((footerLink, index) => (
               <li key={footerLink.sys.id}>
                 <Link
                   className={style.footerbtn}
-                  href={footerLink.fields.internalPath}
+                  href={footerLink?.fields?.internalPath}
                 >
-                  {footerLink.fields.linkLabel}
+                  {footerLink?.fields?.linkLabel}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div>
+      <div className={style.copyrightWrapper}>
         <p
-          className={style.copyrightText}
+          className={`${nunito_sans.className} ${style.copyrightText}`}
         >&copy; {`Copyright ${new Date().getFullYear()} | Elites Rising`}</p>
       </div>
     </footer>

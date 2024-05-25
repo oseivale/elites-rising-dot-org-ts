@@ -1,0 +1,67 @@
+
+.form {
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.interest{
+   display: block;
+}
+
+.interest select {
+    display: block;
+    border: solid 1px #dae1fc;
+}
+
+.formLabel {
+    display: block;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+   
+}
+
+.formInput {
+    width: 100%;
+    display: block;
+    padding: .35rem;
+    border-radius: 5px;
+    border: solid 1px #dae1fc;
+    margin-top: .5rem;
+}
+
+.formSelect {
+    padding: .5rem;
+    border-radius: 5px;
+    border: solid 1px #dae1fc;
+    display: block;
+    width: 100%;
+    margin-top: .5rem;
+}
+.radioFormLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radioFormInput {
+    display: inline-block;
+}
+
+.submitButton {
+    background-color: var(--brand-blue);
+    color: var(--brand-white);
+    padding: .65rem 2rem;
+    width: 25%;
+    border: 2px solid var(--brand-blue);
+    transition: all 450ms ease;
+    border-radius: 10px;
+}
+
+.submitButton:hover {
+    background-color: var(--brand-white);
+    color:  var(--brand-blue);
+    padding: .65rem 2rem;
+    width: 25%;
+    border: 2px solid var(--brand-blue);
+    border-radius: 10px;
+}

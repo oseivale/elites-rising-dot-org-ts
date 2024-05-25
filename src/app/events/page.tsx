@@ -8,7 +8,7 @@ export default async function Events() {
   const pageData = await loader();
   const eventsPageData =
     pageData.props.entries.items[0].fields.sitePages.filter(
-      (page: any) => page.fields.path === "/events"
+      (page: any) => page?.fields?.path === "/events"
     )[0];
 
   return (

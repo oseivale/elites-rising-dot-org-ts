@@ -15,7 +15,7 @@ import { useParams } from "next/navigation";
 export default async function Home() {
   const pageData = await loader();
   const homePageData = pageData.props.entries.items[0].fields.sitePages.filter(
-    (page: any) => page.fields.path === "/"
+    (page: any) => page?.fields?.path === "/"
   )[0];
   console.log("home data", homePageData.fields.seo.fields);
 
@@ -33,26 +33,31 @@ export default async function Home() {
     pageData.props.entries.items[0].fields.globalHeader.fields.heroSection;
 
   const createSection = (pageRows: any) => {
-    
-    return pageRows.map((row: any) => {
-      console.log("row", row.fields);
+    return pageRows?.map((row: any) => {
 
       return (
-        <SectionWrapper
-          key={row?.sys.id}
-          hashId={row?.fields?.hashId}
-          sectionHeader={row?.fields?.sectionHeader}
-        >
-          <FlexGrid
-            content={row?.fields?.foregroundContent}
-            cols={row.fields.numberOfColumnsDesktop}
-          />
-        </SectionWrapper>
+        <>
+          {row ? (
+            <SectionWrapper
+              key={row?.sys.id}
+              hashId={row?.fields?.hashId}
+              sectionHeader={row?.fields?.sectionHeader}
+            >
+              <FlexGrid
+                content={row?.fields?.foregroundContent}
+                cols={row?.fields?.numberOfColumnsDesktop}
+              />
+            </SectionWrapper>
+          ) : null}
+        </>
       );
     });
   };
 
-  console.log('heroData', heroData.fields.desktopBackgroundImage.fields.file.url)
+  console.log(
+    "heroData",
+    heroData.fields.desktopBackgroundImage.fields.file.url
+  );
 
   return (
     <>
@@ -75,12 +80,14 @@ export default async function Home() {
       </head>
       <Layout>
         <HeroBanner
-          desktopBgImage={heroData.fields.desktopBackgroundImage.fields.file.url}
+          desktopBgImage={
+            heroData.fields.desktopBackgroundImage.fields.file.url
+          }
           sectionHeader={heroData.fields.sectionHeader}
           sectionSubheader={heroData.fields.sectionSubheader}
           ctas={heroData.fields.foregroundContent}
         />
-        {createSection(homePageData.fields.pageRows)}
+        {createSection(homePageData?.fields?.pageRows)}
       </Layout>
     </>
   );

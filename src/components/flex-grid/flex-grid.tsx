@@ -130,7 +130,7 @@ const FlexGrid: React.FC<FlexGridProps> = ({ content, cols=1 }) => {
       case "carousel":
         return (
           <div style={{ padding: "5rem 0" }}>
-            <EmblaCarousel slides={type.fields.slides} />
+            <EmblaCarousel slides={type?.fields?.slides} />
           </div>
         );
       default:
