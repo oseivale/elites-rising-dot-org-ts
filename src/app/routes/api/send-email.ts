@@ -1,4 +1,5 @@
 // app/routes/api/send-email.ts
+/*
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
 
@@ -28,3 +29,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(405).json({ error: 'Method not allowed' });
   }
 }
+*/
