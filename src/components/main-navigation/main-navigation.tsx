@@ -61,9 +61,16 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks, logo }) => {
           }
         >
           <Link href="/" passHref>
-            <span className={style.navLogo}>
+            {/* <span className={style.navLogo}>
               <TestLogo />
-            </span>{" "}
+            </span>{" "} */}
+            <Image
+              className={style.navLogo}
+              alt=""
+              src={`https:${logo?.fields?.mainImage?.fields?.file?.url}`}
+              height={100}
+              width={100}
+            />
             {/* Adjust if you use an image or icon here */}
           </Link>
 
