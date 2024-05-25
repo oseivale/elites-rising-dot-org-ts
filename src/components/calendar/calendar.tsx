@@ -156,7 +156,7 @@ const Calendar = () => {
               //       {event.description}
               //     </span>
               //   </Link>
-              <div>
+              <div key={event.location}>
                 {/* <button onClick={onOpenModal}>Open modal</button> */}
                 <Modal open={open} onClose={onCloseModal} center>
                   <span className={`${candal.className} ${styles.eventLink}`}>

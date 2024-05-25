@@ -23,38 +23,15 @@ interface NavLink {
 }
 
 interface MainNavProps {
+  logo: any;
   navigationLinks?: NavLink[];
 }
 
-export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
+export const MainNav: FC<MainNavProps> = ({ navigationLinks, logo }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
 
-  // function useWindowSize() {
-  //   const isSSR = typeof window === 'undefined';
-  //   const [windowSize, setWindowSize] = useState({
-  //     width: 1200, // Default width during SSR
-  //     height: 800, // Default height during SSR
-  //   });
-
-  //   function handleResize() {
-  //     setWindowSize({
-  //       width: isSSR ? 1200 : window.innerWidth,
-  //       height: isSSR ? 800 : window.innerHeight,
-  //     });
-  //   }
-
-  //   useEffect(() => {
-  //     if (!isSSR) {
-  //       window.addEventListener('resize', handleResize);
-  //       return () => window.removeEventListener('resize', handleResize);
-  //     }
-  //   }, []);
-
-  //   return windowSize;
-  // }
-
-  // const { width, height }: any = useWindowSize();
+  console.log("logo", logo);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,9 +93,16 @@ export const MainNav: FC<MainNavProps> = ({ navigationLinks }) => {
           className={scrollY > 70 ? style.coloredNavWrapper : style.navWrapper}
         >
           <Link href="/" passHref>
-            <span className={style.navLogo}>
+            {/* <span className={style.navLogo}>
               <TestLogo />
-            </span>
+            </span> */}
+            <Image
+              className={style.navLogo}
+              alt=""
+              src={`https:${logo?.fields?.mainImage?.fields?.file?.url}`}
+              height={100}
+              width={100}
+            />
           </Link>
           <ul>
             {navigationLinks?.map((navLink, index) => (

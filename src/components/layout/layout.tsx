@@ -20,6 +20,7 @@ export const Layout: React.FC<LayoutProps> = async ({
   return (
     <>
       <MainNav
+        logo={pageData?.props?.entries?.items[0]?.fields?.globalHeader?.fields?.mainNavigation?.fields.logo}
         navigationLinks={
           pageData?.props?.entries?.items[0]?.fields?.globalHeader?.fields?.mainNavigation?.fields?.navigationLinks
         }
